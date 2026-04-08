@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Aula</title>
+	<style>
+	body{
+	background: Sienna
+
+
+
+; 
+	display:column;
+	padding:0px;
+	
+	
+	
+	}
+	h1{
+	color:white;
+	text-align:center;
+	
+	}
+	h4{
+	color:white;
+	text-align:center;
+	
+	}
+	@keyframes move {
+	0% {top :0px;}
+	30% { top :50px;}	
+	75% {top: 100px}
+	100% {top: 0px}
+		
+		}
+               @keyframes clickAnimation {
+ 
+     	0% { transform: scale(0.9);
+	bottom:0; }
+      
+	50% { transform: scale(1);
+	bottom:4px; }
+     
+	 100% { transform: scale(0.9); }
+   
+ }
+	#Cookie{
+	cursor:pointer;
+	background:white;
+	width:2px;
+	border-radius:150px;
+	padding:100px;
+	margin:auto;
+	margin-top:100px;
+	transition:3s;
+	
+	
+	position:relative;
+	}
+	#Cookie:hover{
+	padding:102px;
+	transition:0.2s;
+	
+	
+	
+	}
+	 #Cookie:active 
+	{
+      
+	animation: clickAnimation 0.3s;
+   
+	 }
+	.glupCpS{
+	 cursor:pointer;
+	color:white;
+	background:Chocolate;
+	padding:10px;
+	width:130px;
+	border-radius:20px;
+	border:3px solid white;
+	margin:auto;
+	margin-top:0px;
+	
+	}
+	.glupCpS:hover{
+	background:rgb(170,80,30);
+	border:3px solid rgb(110,49,30);
+	}	
+	.glupCpS:active{
+	animation: clickAnimation 0.3s;
+   
+	background:rgb(170,80,30);
+	border:3px solid Chocolate ;	
+	}
+	.Hotbar{
+	  overflow-y: auto;
+	margin-top:90px;
+	display:flex;
+	flex-direction:column;
+	background:rgb(110,59,30)
+	width:23px;
+;
+	padding:10px;	
+	border-radius:20px;
+	border:2px solid white;
+		
+		}
+	</style>
+  </head>
+  <body>
+         <h1  id="totalDeCookies">0 Cookies</h1>
+	<h4 id="CpC">CpC(Cookies por click): 1</h4>
+         <div id="Cookie" onclick="Clicks()" ></div> 
+         <div class="Hotbar">
+	<div class=glupCpS onclick="CpC05()" id="CpC05">Seu CpC ganha +0.5<br>
+	<br>
+	100 Cookies</div>
+	<div class=glupCpS onclick="CpC1()" id="CpC50">Seu CpC ganha +5.0 <br>
+	<br>
+	500 Cookies</div>
+	<div class=glupCpS onclick="CpC10()" id="CpC100">Seu CpC ganha +100<br><br>
+	1500 Cookies</div>
+
+	
+          </div>
+  </body>
+    <script>
+	const cookie = document.getElementById("Cookie")
+	let CpCa = 1499
+	let CpCb   = 99
+	let CpCc = 499
+	const totC = document.getElementById("totalDeCookies")
+	let Cookies = 0
+	let CpS = 1
+	let Clikers = 0
+	const CpC = document.getElementById("CpC")
+	const CpCd = document.getElementById("CpC05")
+	const CpCf = document.getElementById("CpC50")
+	const CpCg = document.getElementById("CpC100")
+	
+
+
+
+
+function Clicks() {
+	Cookies+= CpS ;
+	if(Clikers>-1){
+	cookie.style.background = "Chocolate"	
+		}
+	if(Clikers>10000){
+	cookie.style.background = "Gold"	
+		}
+	totC.textContent = Cookies + " Cookies"
+	Clikers++;
+	
+		}
+
+
+
+
+function CpC05() {
+	if (Cookies > CpCb){
+	CpCb+=11
+	 CpS += 0.5;
+	 Cookies -= CpCb;
+	totC.textContent = Cookies + " Cookies"
+	CpC.textContent = "CpC: " + CpS
+	CpCd.innerHTML ="Seu CpC ganha +0.5<br><br>" + CpCb + " Cookies"
+	if (Cookies<0){
+	Cookies = 0
+	totC.textContent = Cookies + " Cookies"	
+		}
+	}
+}
+
+   function CpC1() {
+	if (Cookies > CpCc){
+	CpCc+=101
+	 CpS += 5;
+	 Cookies -= CpCc;
+	totC.textContent = Cookies + " Cookies"
+	CpC.textContent = "CpC: " + CpS
+	CpCf.innerHTML ="Seu CpC ganha +5.0<br><br>" + CpCc + " Cookies"
+	 if (Cookies<0){
+	Cookies = 0
+	totC.textContent = Cookies + " Cookies"	
+		}
+	}
+	}
+   function CpC10() {
+	if (Cookies > CpCa){
+	CpCa = CpCa + CpCa
+	CpS+=100;
+	 Cookies -= CpCa;
+	totC.textContent = Cookies + " Cookies"
+	CpC.textContent = "CpC: " + CpS
+	CpCg.innerHTML ="Seu CpC ganha +100<br><br>" + CpCa + " Cookies"
+	if (Cookies<0){
+	Cookies = 0
+	totC.textContent = Cookies + " Cookies"	
+		}
+	}
+	}		
+	
+    </script>
+</html>

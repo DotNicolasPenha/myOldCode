@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<header>
+<style>
+ *{
+    font-family:Arial;
+
+   }
+#CardList{
+display:none;
+margin:auto;
+box-shadow:0px  2px 5px rgb(100,100,100);
+padding:30px;
+width:190px;
+ border-radius:10px;
+}
+button{
+cursor:pointer;
+background:green;
+border:none;
+color:white;
+padding:10px;
+border-radius:10px;
+
+}
+h2{
+color:green;
+text-align:center;
+
+}
+input{
+border:none;
+padding:10px;
+background:rgb(220,220,220);
+margin-top:10px;
+margin-bottom:10px;
+border-radius:10px;
+}
+button:hover{
+background:DarkGreen;
+}
+#Btn-2{
+margin-left:70px;
+}
+li{
+color:green;
+}
+</style>
+</header>
+
+
+<html>
+<body>
+<button  class="btn-1" onclick="Cl1()">Criar lista</button>
+<div id="CardList">
+  <h2>Crie sua lista</h2>
+  <input placeholder="Digite o nome da sua lista" onchange="Nl()" id="NameList">
+ <input placeholder="Digite sua tarefa" onchange="add()" id="tarefa">
+  <ul id="lista">
+
+   </ul>
+  <button onclick="Cl2()" id="Btn-2">Criar</button>
+</div>
+</body>
+<script>
+const Card = document.getElementById("CardList")
+const tarefa =  document.getElementById("tarefa")
+const NomeDaLista  =  document.getElementById("NameList")
+const list =  document.getElementById("lista")
+
+function add(){
+const li = document.createElement("li")
+li.textContent = tarefa.value
+list.appendChild(li)
+}
+
+function Cl1(){
+Card.style.display = "block"
+
+}
+function Cl2(){
+Card.style.display = "none"
+list.removeChild(li)
+
+}
+
+
+
+</script>
+</html>

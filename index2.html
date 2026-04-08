@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+     <style>
+	body {
+		background: rgb(250, 250, 250);
+		font-family: Arial;
+		color: black;
+	}
+	#container {	
+		background: white;
+		padding: 20px;
+		width: 240px;
+		box-shadow: 5px 5px 5px rgb(230,230,230);
+		margin: auto;
+		margin-top: 150px;
+		border-radius: 10px;
+	}
+	input {
+		border: none;
+		padding: 10px;
+		border-radius: 10px;
+		background: rgb(240, 240, 240);
+	
+	}
+	#btn-1 {
+		border: none;
+		background: Darkgreen;
+		padding: 10px;
+		color: white;
+		border-radius: 20px;
+	}
+	#btn-1:hover {
+		background: green;	
+	}
+	.btn-2 {
+		border-radius: 50px;
+		padding: 10px;
+		margin-left: 10px;	
+	}
+	li {
+		margin-right: 30px;
+	}
+	h1{
+          	color:green;
+	margin-left:30px;	
+		}
+	.caixa{
+	background:green;
+                  padding:6px;
+	border-radius:10px;	
+                  display:flex;
+	
+	
+		}
+    </style>
+</head>
+<body>
+    <div id="container">   
+	     <h1>Check list</h1>  
+	 	<input placeholder="Digite sua tarefa" id="Tarefa"></input>	
+	    <button id="btn-1" onclick="add()">Add</button>	
+	    <ul id="Lista"></ul>
+		
+    </div>
+</body>
+<script>
+    const tarefa = document.getElementById("Tarefa");
+    const lista = document.getElementById("Lista");
+
+    function add() {
+        const t = tarefa.value.trim();
+        if (t !== "") {
+            const o = document.createElement("li");
+            o.textContent = t;
+            lista.appendChild(o);
+            tarefa.value = "";
+
+            const btnDEL = document.createElement("button");
+            btnDEL.textContent = "X";
+            btnDEL.style.background = "red";
+            btnDEL.style.color = "white";
+            btnDEL.style.border = "none";
+            btnDEL.classList = "btn-2";
+            o.appendChild(btnDEL);
+	console.log("tarefa adicionada")
+
+            btnDEL.addEventListener("click", function() {
+                o.parentNode.removeChild(o);
+	console.log("tarefa removida")
+            });
+        } else {
+            alert("Por favor, insira uma tarefa .");
+	console.log("Nenhuma tarefa na entrada")
+        }
+    }
+</script>
+</html>

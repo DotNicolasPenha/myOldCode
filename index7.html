@@ -1,0 +1,31 @@
+<DOCTYPE html>
+<html>
+<style>
+body{
+ background:blue;
+color:white;
+}
+
+div{
+ width:50px;
+background:white;
+  height:50px;
+border-radius:20px;
+}
+</style >
+<body>
+  <main>
+      <h1 id="Clicks">0<h1>
+      <div onclick="Add()">
+      </div>
+  </main>
+<script>
+let Clicks = 0;
+  const h1  = document.getElementById("Clicks")
+function Add(){
+Clicks++;
+h1.textContent = Clicks
+}
+</script>
+</body>
+</html>
